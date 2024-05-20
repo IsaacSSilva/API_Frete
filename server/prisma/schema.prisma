@@ -8,12 +8,12 @@ datasource db {
 }
 
 model frete {
-  id Int @id @default(autoincrement())
+  id             Int    @id @default(autoincrement())
   name_transport String
-  constant Float
-  heigh_min Float 
-  heigh_max Float 
-  Width_min Float 
-  Width_max Float 
-  Delivery_time DateTime
+  constant       Float
+  heigh_min      Int
+  heigh_max      Int
+  width_min      Int
+  width_max      Int
+  delivery_time  Int
 }
