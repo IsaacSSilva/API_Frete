@@ -9,10 +9,10 @@ export async function calcFrete(app: FastifyInstance) {
 
     const dataProdutc = z.object({
       dimensao: z.object({
-        altura: z.number(),
-        largura: z.number()
+        altura: z.number().min(1),
+        largura: z.number().min(1)
       }),
-      peso: z.number()
+      peso: z.number().min(1)
     })
 
     const { dimensao, peso } = dataProdutc.parse(request.body)
