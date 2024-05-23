@@ -90,7 +90,7 @@ ___
 ### Fluxo 
 > " `[] (vasil = nao comcluido)` |
 > `[x] (com 'x' = comcluido!)` "
-- [x] Criar uma *`API REST`*
+- [ ] Criar uma *`API REST`*
   - [x] Validar as Dimencoes com as *`opcoes de frete`*
     - [x] Retornar uma ou mais transportadoras, se nao retornar vasio `[]` caso nem uma seja valida
   - [x] calcular o frete cruzando a `Info.` do *`produto`* e as opcoes de frete
