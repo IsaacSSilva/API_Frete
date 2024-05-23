@@ -1,6 +1,11 @@
 node_modules
 
 .env
-.yml
-docker-compose
+
+pnpm
+
+pnpm-lock.yaml
+
+docker
+
 docker-compose.yml
