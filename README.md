@@ -28,20 +28,6 @@ Inicie adicionando todas as dependencias e startando a ORM Prisma juntamente com
   npx prisma migrate dev
 ```
 
-```yml
-# O arquivo estara mais detalhado em " ..mais detalhes aqui" 
-  postgres:
-    image: bitnami/postgresql:latest
-    ports:
-      - '5432:5432'
-    environment:
-      - POSTGRES_USER=[Seu Usuario]
-      - POSTGRES_PASSWORD=[Sua Senha]
-      - POSTGRES_DB=[Seu db]
-    volumes:
-      - server_pg_data:/bitnami/postgresql
-```
-
 [*`🔗 Para Mais detalhes aqui 👈`*](README/Getting-Stared.md)
 
 <br/>
@@ -88,8 +74,6 @@ ___
 ## [`🎯`](README/README-KABUM.md#o-desafio) Objetivo
 
 ### Fluxo 
-> " `[] (vasil = nao comcluido)` |
-> `[x] (com 'x' = comcluido!)` "
 - [x] Criar uma *`API REST`*
   - [x] Validar as Dimencoes com as *`opcoes de frete`*
     - [x] Retornar uma ou mais transportadoras, se nao retornar vasio `[]` caso nem uma seja valida

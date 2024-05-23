@@ -28,26 +28,6 @@ substua `docker` pelos parametros do arquivo `./docker-compose.yml`
 ```bash
     docker compose up -d
 ```
-crie `./server/docker-compose.yml` com o seguinte script.
-```yml
-# versao de escolha do dev.
-version: '3.7'
-
-services:
-  postgres:
-    image: bitnami/postgresql:latest
-    ports:
-      - '5432:5432'
-    environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_DB=docker
-    volumes:
-      - server_pg_data:/bitnami/postgresql
-
-volumes:
-  server_pg_data:
-```
 
 <br/>
 
