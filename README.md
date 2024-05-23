@@ -2,7 +2,11 @@
   
 ![KaBum!](https://static.kabum.com.br/conteudo/temas/001/imagens/topo/logo_kabum_.png)
 
-# API-REST-Frete-KaBuM
+# API-REST-Frete | Desafio BackEnd
+
+> *' tenho como Objetivo me desafiar e export minhas habilidades e evolucao '*
+
+___
 
 </div>
   
@@ -10,40 +14,118 @@
 >
 > [README - KaBuM!](README/README-KABUM.md)
 
+<br/>
+
 ## Getting Started
 
 Inicie adicionando todas as dependencias e startando a ORM Prisma juntamente com Docker.
 
-> dependencias:
-
 ```bash
+# dependencias
   npm install
-   # or
-  yarn i
-   # or
-  pnpm i
+
+# Iniciar prisma
+  npx prisma migrate dev
 ```
 
-> .env, Docker and prisma:
-
-```.env
-  DATABASE_URL="postgresql://docker:docker@localhost:5432/postgresql?docker"
+```yml
+# O arquivo estara mais detalhado em " ..mais detalhes aqui" 
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=[Seu Usuario]
+      - POSTGRES_PASSWORD=[Sua Senha]
+      - POSTGRES_DB=[Seu db]
+    volumes:
+      - server_pg_data:/bitnami/postgresql
 ```
 
-```bash
-    docker compose up -d
-```
+[*`🔗 Para Mais detalhes aqui 👈`*](README/Getting-Stared.md)
 
-```bash
-    npx prisma migrate dev 
-     # or
-    yarn dlx prisma migrate dev
-     # or
-    pnpx prisma migrate dev
-```
-Se altomaticamente o `db` não for populado pelo arquivo `seed.ts` use: 
+<br/>
 
-```bash
-    npx prisma db seed 
-```
 
+### ℹ️ Arquitura
+
+`./src`:.
+
+> [`🔗.`](README/Architecture/src.md#http) `http/`:
+
+Principal app `src/http`, onde se encontra as Rotas e o Servidor.
+
+Rotas `/routs`, contendo `CRUD` e a rota `calcule.ts` responsavel pelo resultado final.
+
+`creat-frete.ts` e `ger-frete.ts`, caso queira add novo frete e ter retorno deles.
+
+, caso queira add novo frete.
+
+Servido ou controlador `/server.ts`.
+
+
+> [`🔗.`](README/Architecture/src.md#lib) `lib/`:
+
+`prisma.ts`, liberando a funcionalidade de conectar ao *`db`* | `@prisma/client`.
+
+
+> [`🔗.`](README/Architecture/src.md#utils) `utils/`:
+
+`formuleCalcFrete.ts`, responsavel pela funcao de calcular e formatar o valor do frete,
+
+<br/>
+
+`./prisma`:.
+
+`schema.prisma`, responsavel para criar o `schema`, criando as tabelas ou seus `model` para seu *`db`*
+
+> [`🔗.`](README/Architecture/prima.md#seed) `seed/`:
+
+O Script `seed.ts` popula  o *`db`*
+
+___
+
+## [`🎯`](README/README-KABUM.md#o-desafio) Objetivo
+
+### Fluxo 
+> " `[] (vasil = nao comcluido)` |
+> `[x] (com 'x' = comcluido!)` "
+- [x] Criar uma *`API REST`*
+  - [x] Validar as Dimencoes com as *`opcoes de frete`*
+    - [x] Retornar uma ou mais transportadoras, se nao retornar vasio `[]` caso nem uma seja valida
+  - [x] calcular o frete cruzando a `Info.` do *`produto`* e as opcoes de frete
+    > ```ts 
+    > (Peso x constante_frete) / 10 
+    > ```
+
+### Requisito
+
+- (x) App ser *`API REST`*
+- (x) Validação de `altura` *máxima* e *mínima* para cada opção de frete
+- (x) Validação de `largura` *máxima* e *mínima* para cada opção de frete
+  ```json
+  // caso a validacao nao aprove todos.
+    []
+  ```
+- (x) Validação se o `peso` do *`produto`* é maior que `0` (zero).
+- (x) Rota `POST`
+- (x) Receber parametros em Formato `JSON` com as `Info.`: `dimensao`:`altura` e `largura`, `peso`
+  ```json
+  {
+    "dimensao": {
+      "altura":152,
+      "largura":50
+    },
+    "peso":850
+  }
+  ```
+- (x) Formatar e retornar com as `Info.`: `nome`, `valor` e `prazo`
+  ```json
+  [
+    {
+      "nome":"Entrega Ninja",
+      "valor_frete": 12.00,
+      "prazo_dias": 6
+    },
+  ]
+  ```
