@@ -12,7 +12,7 @@ ___
   
 > Readme do Desafio original
 >
-> [README - KaBuM!](README/README-KABUM.md)
+> [README - KaBuM!](doc/README-KABUM.md)
 
 <br/>
 
@@ -28,7 +28,7 @@ Inicie adicionando todas as dependencias e startando a ORM Prisma juntamente com
   npx prisma migrate dev
 ```
 
-[*`🔗 Para Mais detalhes aqui 👈`*](README/Getting-Stared.md)
+[*`🔗 Para Mais detalhes aqui 👈`*](doc/Getting-Stared.md)
 
 <br/>
 
@@ -37,7 +37,7 @@ Inicie adicionando todas as dependencias e startando a ORM Prisma juntamente com
 
 `./src`:.
 
-> [`🔗.`](README/Architecture/src.md#http) `http/`:
+> [`🔗.`](doc/Architecture/src.md#http) `http/`:
 
 Principal app `src/http`, onde se encontra as Rotas e o Servidor.
 
@@ -50,12 +50,12 @@ Rotas `/routs`, contendo `CRUD` e a rota `calcule.ts` responsavel pelo resultado
 Servido ou controlador `/server.ts`.
 
 
-> [`🔗.`](README/Architecture/src.md#lib) `lib/`:
+> [`🔗.`](doc/Architecture/src.md#lib) `lib/`:
 
 `prisma.ts`, liberando a funcionalidade de conectar ao *`db`* | `@prisma/client`.
 
 
-> [`🔗.`](README/Architecture/src.md#utils) `utils/`:
+> [`🔗.`](doc/Architecture/src.md#utils) `utils/`:
 
 `formuleCalcFrete.ts`, responsavel pela funcao de calcular e formatar o valor do frete,
 
@@ -65,7 +65,7 @@ Servido ou controlador `/server.ts`.
 
 `schema.prisma`, responsavel para criar o `schema`, criando as tabelas ou seus `model` para seu *`db`*
 
-> [`🔗.`](README/Architecture/prima.md#seed) `seed/`:
+> [`🔗.`](doc/Architecture/prima.md#seed) `seed/`:
 
 O Script `seed.ts` popula  o *`db`*
 
