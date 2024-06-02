@@ -84,16 +84,16 @@ ___
 
 ### Requisito
 
-- (x) App ser *`API REST`*
-- (x) Validação de `altura` *máxima* e *mínima* para cada opção de frete
-- (x) Validação de `largura` *máxima* e *mínima* para cada opção de frete
+- [x] App ser *`API REST`*
+- [x] Validação de `altura` *máxima* e *mínima* para cada opção de frete
+- [x] Validação de `largura` *máxima* e *mínima* para cada opção de frete
   ```json
   // caso a validacao nao aprove todos.
     []
   ```
-- (x) Validação se o `peso` do *`produto`* é maior que `0` (zero).
-- (x) Rota `POST`
-- (x) Receber parametros em Formato `JSON` com as `Info.`: `dimensao`:`altura` e `largura`, `peso`
+- [x] Validação se o `peso` do *`produto`* é maior que `0` (zero).
+- [x] Rota `POST`
+- [x] Receber parametros em Formato `JSON` com as `Info.`: `dimensao`:`altura` e `largura`, `peso`
   ```json
   {
     "dimensao": {
@@ -103,7 +103,7 @@ ___
     "peso":850
   }
   ```
-- (x) Formatar e retornar com as `Info.`: `nome`, `valor` e `prazo`
+- [x] Formatar e retornar com as `Info.`: `nome`, `valor` e `prazo`
   ```json
   [
     {
