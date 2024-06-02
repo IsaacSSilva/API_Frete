@@ -4,7 +4,7 @@
 
 # API-REST-Frete | Desafio BackEnd
 
-> *' tenho como Objetivo me desafiar e export minhas habilidades e evolucao '*
+> *' tenho como Objetivo me desafiar e expor minhas habilidades e evolução.'*
 
 ___
 
